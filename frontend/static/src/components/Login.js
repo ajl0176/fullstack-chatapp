@@ -19,7 +19,7 @@ handleChange(event){
 render(){
   return(
     <form className="col-12 col-md-6" onSubmit={(event) => this.props.registerUser(event, this.state)}>
-       <h5 className="Registering">Create Account</h5>
+       <h5 className="Register">Create Account</h5>
        <div className="form-group">
          <label htmlFor="username">Username</label>
          <input type='text' className="form-control" id="username" name="username" value={this.state.username} onChange={this.handleChange}/>

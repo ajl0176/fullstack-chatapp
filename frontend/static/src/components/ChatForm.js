@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 
 function Chat(props){
-  const chats = props.chats.map(chat => <li className="list-group-item mt-3"key={chat.id}>{chat.message}</li>);
+  const chats = props.chats.map(chat =>
+    <li className="list-group-item mt-3"key={chat.id}>{chat.message}</li>);
   return(
     <div className="messages">
      {chats}
