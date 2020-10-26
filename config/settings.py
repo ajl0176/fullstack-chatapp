@@ -169,3 +169,10 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/static')
 STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'frontend/static/build/static'), )
 
 AUTH_USER_MODEL = 'accounts.User'
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

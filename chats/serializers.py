@@ -1,10 +1,13 @@
-from django.conf import settings
-from django.db import models
+from rest_framework import serializers
 
-class Chat(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    message = models.TextField()
 
-    def __str__(self):
-        return self.user.username
-        
+from .models import Message
+
+
+
+class MessageSerializer(serializers.ModelSerializer):
+    user = serializers.ReadOnlyField(source='user.username')
+
+    class Meta:
+        model = Message
+        fields = ('id', 'user', 'message')

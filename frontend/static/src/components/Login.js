@@ -27,7 +27,6 @@ render(){
        <div className="form-group">
          <label htmlFor="email">Email Address</label>
          <input type='text' className="form-control" id="email" name="email" value={this.state.email} onChange={this.handleChange}/>
-         <small className="form-text text-muted">We'll never share your email with anyone else.</small>
        </div>
        <div className="form-group">
          <label htmlFor="password">Password</label>
