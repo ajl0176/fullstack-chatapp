@@ -10,7 +10,7 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      messages: [],
+      chats: [],
       display: 'register',
       loggedIn: Cookies.get('Authorization')? true:false,
     }
@@ -29,7 +29,7 @@ class App extends Component{
       if (loggedIn === true){
         fetch ('api/v1/chats/')
         .then (response => response.json())
-        .then (data => this.setState({messages: data}))
+        .then (data => this.setState({chats: data}))
         .catch (error => console.log ('Error:', error));
       }
   }
@@ -76,9 +76,8 @@ class App extends Component{
     }
   }
 
-  async handlePost(e, msg, usr){
+  async handlePost(e, obj){
      e.preventDefault();
-    const obj = {user: usr, message: msg}
      const options = {
        method: 'POST',
        headers: {
@@ -134,7 +133,7 @@ render(){
   let chat;
   const loggedIn  = this.state.loggedIn;
   if (loggedIn === true){
-    chat = <div className='ChatForm'><ChatForm chats={this.state.chats} postChat={this.postChat} logOut={this.logOut}/></div>
+    chat = <div className='ChatForm'><ChatForm chats={this.state.chats} handlePost={this.handlePost} postChat={this.postChat} logOut={this.logOut}/></div>
   } else {
     chat= ''
   }

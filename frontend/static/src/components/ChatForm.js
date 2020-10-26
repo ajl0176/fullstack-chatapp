@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 function Chat(props){
   const chats = props.chats.map(chat =>
-    <li className="list-group-item mt-3"key={chat.id}>{chat.message}</li>);
+    <li className="list-group-item mt-3"key={chat.id}>{chat.message}<span>{chat.user}</span></li>);
   return(
     <div className="messages">
      {chats}
@@ -15,7 +15,6 @@ class ChatForm extends Component {
   constructor(props){
     super(props);
     this.state = {
-      user:'',
       message: '',
     }
     this.handleChange = this.handleChange.bind(this)

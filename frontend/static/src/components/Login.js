@@ -6,9 +6,7 @@ class Login extends Component{
     super(props);
     this.state = {
       username: '',
-      // email:'',
       password: '',
-      // password2:'',
     }
 this.handleChange = this.handleChange.bind(this)
 }
@@ -19,25 +17,17 @@ handleChange(event){
 render(){
   return(
     <form className="col-12 col-md-6" onSubmit={(event) => this.props.registerUser(event, this.state)}>
-       <h5 className="Register">Create Account</h5>
+       <h5 className="Register">Login</h5>
        <div className="form-group">
          <label htmlFor="username">Username</label>
          <input type='text' className="form-control" id="username" name="username" value={this.state.username} onChange={this.handleChange}/>
        </div>
        <div className="form-group">
-         <label htmlFor="email">Email Address</label>
-         <input type='text' className="form-control" id="email" name="email" value={this.state.email} onChange={this.handleChange}/>
-       </div>
-       <div className="form-group">
          <label htmlFor="password">Password</label>
          <input type='text' className="form-control" id="password1" name="password1" value={this.state.password1} onChange={this.handleChange}/>
        </div>
-       // <div className="form-group">
-       //   <label htmlFor="password2">Confirm Password</label>
-       //   <input type='text' className="form-control" id="password2" name="password2" value={this.state.password2} onChange={this.handleChange}/>
-       // </div>
        <div className="create-Account-Btn">
-         <button className="btn btn-primary">Register</button>
+         <button className="btn btn-primary">Login</button>
        </div>
      </form>
   );
